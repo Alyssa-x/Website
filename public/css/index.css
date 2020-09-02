@@ -1,0 +1,75 @@
+
+body{
+    background-color: #4f5555;
+}
+
+.container{
+
+    width:100%;
+
+ 
+}
+.container .form{
+    width:200px;
+    height:200px;
+    padding:100px;
+    
+    right: 200px;
+    top: 150px;
+    position: absolute;
+    /* display: inline-block; */
+    text-align: center;
+    background-color: #3e4145;
+
+}
+.container .form .login{
+    width:150px;
+    display: inline-block;
+    margin-bottom: 100px;
+   
+    text-align: center;
+    padding:5px;
+    color:	#d3d7d4;
+    /* background-color: #9d9087; */
+    
+    font-size: 23px;
+    font-weight: 350;
+    border:solid 2px #281f1d;
+    border-radius: 20px;
+    
+    /* left:-50%; */
+
+}
+.container .form .register{
+    width:150px;
+    display: inline-block;
+    /* margin: 50px; */
+    /* right: 200px;
+    top: 100px; */
+    text-align: center;
+    padding:5px;
+    color:	#d3d7d4;
+    /* background-color:#9d9087; */
+    font-size: 23px;
+    font-weight: 350;
+    border:solid 2px #281f1d;
+    border-radius: 20px;
+    /* position:absolute; */
+    /* left:-50%; */
+
+}
+
+
+
+
+/* canvas */
+#canvas {
+	margin: auto 100px;
+	display: block;
+	filter: url("#shadowed-goo");
+}
+
+svg {
+	display: none;
+}
+

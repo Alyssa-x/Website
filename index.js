@@ -16,9 +16,9 @@ app.use(express.json());
 
 //router
 app.use("/api/user",require("./routes/user"));
+app.use("/api/news", require("./routes/news"));
 
-
-app.listen(9528, function () {
-  console.log("server listening on 9528");
+app.listen(9527, function () {
+  console.log("server listening on 9527");
 });
 

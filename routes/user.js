@@ -21,11 +21,13 @@ router.post("/login", async function (req, res) {
   if (result) {
     res.send(result);
 
-  } else {
+  }
+  else{
     res.send({
-      err: "账号密码错误",
-      
+      err: "账号不存在，请注册",
     });
+
+
   }
 });
 

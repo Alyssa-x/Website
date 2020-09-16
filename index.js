@@ -1,7 +1,13 @@
 var express = require("express"); // 导入express
-
+var cookieParser = require("cookie-parser")
 var app = express(); // 创建一个web服务器
 var path = require("path");
+
+
+var secret = "ntu";
+app.use(cookieParser(secret));
+app.use(require("./middleware/LoginUser"));
+app.use(require("./middleware/Permission"));
 
 
 //搭建静态服务器

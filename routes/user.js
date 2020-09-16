@@ -19,6 +19,14 @@ router.post("/reg", async function (req, res) {
 router.post("/login", async function (req, res) {
   var result = await services.userService.login(req.body.loginId, req.body.loginPwd);
   if (result) {
+    // 登录成功
+    res.cookie("token", result._id, {
+      // cookie的其他信息
+      path: "/", // 默认值为 /
+      maxAge: 3600 * 1000 * 24, // 单位毫秒，在响应头中会自动转换为秒
+      signed: true, //  启用后，会使用之前配置的私钥，对值进行加密
+    });
+
     res.send(result);
 
   }
@@ -28,6 +36,20 @@ router.post("/login", async function (req, res) {
     });
 
 
+  }
+});
+
+router.get("/whoami", function (req, res) {
+  // 得到客户端当前登录的用户信息
+  // 客户端是否需要在query中传递用户的id
+  if (req.user) {
+    // 登录过了
+    res.send(req.user);
+  } else {
+    // 没有登录过，或登录已过期
+    res.send({
+      err: "没有登录，或登录已过期",
+    });
   }
 });
 
